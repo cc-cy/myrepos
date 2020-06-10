@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sz.cy.pojo.Menu">
+   <select id="selectParentTitle" resultType="cn.sz.cy.pojo.Menu">
+   		select menuid, menu_name, parentid, picpath, menu_status, menu_url from menu where parentid=0
+   </select>
+
+   	<select id="selectChildTitle" parameterType="Integer" resultType="cn.sz.cy.pojo.Menu">
+		select menuid, menu_name, parentid, picpath, menu_status, menu_url from menu where parentid=#{parentid}
+   </select>
+</mapper>

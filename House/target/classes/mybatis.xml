@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<environments default="myconn">
+		<environment id="myconn">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+				<property name="username" value="zhangsan" />
+				<property name="password" value="abc" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+    <mapper resource="cn/sz/cy/pojo/House.xml"/> 
+	<mapper resource="cn/sz/cy/pojo/Menu.xml"/>
+	<mapper resource="cn/sz/cy/pojo/News.xml"/>  
+	<mapper resource="cn/sz/cy/pojo/User.xml"/>
+	</mappers>
+</configuration>
